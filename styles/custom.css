@@ -1,0 +1,24 @@
+.shower {
+  --accent: #3a2d72;
+}
+
+.shower .caption h1 {
+  line-height: 1.2;
+}
+.shower .caption p {
+  margin-top: .5em;
+}
+p.venue {
+  font-style: italic;
+}
+
+.title.slide h2 {
+  margin-bottom: 0;
+}
+
+.title.slide h3 {
+  margin-bottom: 1.33em;
+  font-size: 2em;
+  font-weight: normal;
+  font-style: italic;
+}
