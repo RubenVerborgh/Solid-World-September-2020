@@ -50,3 +50,10 @@ curl -X PUT -H "Content-Type: text/html" -T thesis.html http://localhost:3000/th
 curl -s http://localhost:3000/thesis.html | wc -l
 curl -s http://localhost:3000/thesis.html -H "Accept: text/turtle"
 curl -s http://localhost:3000/thesis.html -H "Accept: application/n-triples" | wc -l
+
+
+# 7. Read and convert a large Turtle file
+# -----------------------------------------
+gunzip < infobox.ttl.gz | wc -l
+gunzip < infobox.ttl.gz | curl -X PUT -H "Content-Type: text/turtle" -T - http://localhost:3000/large.ttl
+curl -s http://localhost:3000/large.ttl | wc -l
