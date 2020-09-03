@@ -41,3 +41,12 @@ curl http://localhost:3000/profile.ttl -H "Accept: application/ld+json"
 cat add-friend.sparql
 curl -X PATCH -H "Content-Type: application/sparql-update" -T add-friend.sparql http://localhost:3000/profile.ttl
 curl http://localhost:3000/profile.ttl -H "Accept: application/ld+json"
+
+
+# 7. Read and convert an HTML+RDFa document
+# -----------------------------------------
+curl -s https://csarven.ca/linked-research-decentralised-web > thesis.html
+curl -X PUT -H "Content-Type: text/html" -T thesis.html http://localhost:3000/thesis.html
+curl -s http://localhost:3000/thesis.html | wc -l
+curl -s http://localhost:3000/thesis.html -H "Accept: text/turtle"
+curl -s http://localhost:3000/thesis.html -H "Accept: application/n-triples" | wc -l
